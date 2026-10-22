@@ -1,0 +1,75 @@
+.cmp-layoutcontainer--header {
+    background-color: $body-bg;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 0px;
+    -webkit-transition: padding-bottom 0s ease, padding-top 0s ;
+    -moz-transition:  padding-bottom 0s ease, padding-top 0s ;
+    -o-transition:  padding-bottom 0s ease, padding-top 0s ;
+    transition:  padding-bottom 0s ease-out, padding-top 0s ease 0s ease-out;
+
+
+    .aem-Grid {
+        @include container-content();
+    }
+
+    @media (min-width: $screen-medium + 1) {
+        .aem-Grid:has(> .cmp-button--header-search) {
+            display: flex;
+            align-items: center;
+
+            > .cmp-navigation--header {
+                flex: 1;
+                min-width: 0;
+                // Override the legacy header navigation's percentage width.
+                width: auto !important;
+                padding-right: 0;
+
+                .cmp-navigation {
+                    padding-top: 0;
+                }
+
+                .cmp-navigation__item--level-1 > .cmp-navigation__item-link {
+                    display: inline-flex;
+                    align-items: center;
+                    height: $button-size;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
+            }
+
+            > .cmp-button--header-search {
+                flex: 0 0 $button-size;
+                width: $button-size;
+                padding: 0;
+                margin-right: $gutter-padding;
+            }
+        }
+    }
+
+     /* Tablet */
+     @media (max-width: $screen-medium) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+     }
+}
+
+/* Add Drop shadow on scroll */
+
+.scrolly {
+    .cmp-layoutcontainer--header {
+    
+      -webkit-box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.26);
+      -moz-box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.26);
+      box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.26);
+      -webkit-transition: padding-bottom 0.5s ease, padding-top 0.5s ;
+      -moz-transition:  padding-bottom 0.5s ease, padding-top 0.5s ;
+      -o-transition:  padding-bottom 0.5s ease, padding-top 0.5s ;
+      transition:  padding-bottom 0.5s ease-out, padding-top 0.5s ease 0.25s ease-out;
+        @media (min-width: $screen-medium +1) {
+            padding-top: 15px;
+            padding-bottom: 5px;
+        }
+    }
+
+}
